@@ -10,7 +10,7 @@ public class Palindrome {
             reversedArray[chars.length-1-i] = chars[i];
         }
         String reversed = new String(reversedArray); //Cannot use reversedArray.toString(), that gives the string of the object reference.
-        if (reversed.equals(s)) {
+        if (reversed.equals(s) && s.length() > 2) {
             return true;
         } else {
             return false;
@@ -21,7 +21,7 @@ public class Palindrome {
         String[] words= sentence.split(" ");
         String longestPal = "";
         for (String s : words) {
-            if (longestPal.length() < s.length() && s.length() > 2) {
+            if (longestPal.length() < s.length()) {
                 if (this.isPalindrome(s)) {
                     longestPal = s;
                 }
